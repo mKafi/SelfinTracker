@@ -1,4 +1,4 @@
-# StatBook
+# SelfinTracker
 
 This is a Laravel based simple and straightforward backed to keep individuals financial expenses, event costs and so on...
 
