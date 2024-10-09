@@ -5,6 +5,8 @@ namespace App\Http\Requests;
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Exceptions\HttpResponseException;
+use App\Models\Person;
+use Illuminate\Validation\Rule;
 
 class UpdatePersonRequest extends FormRequest
 {
@@ -24,12 +26,17 @@ class UpdatePersonRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'fullName' => ['required', 'string'],
-            'email' => ['required', 'email'],
-            'age' => ['required', 'numeric'],
+            'hash' => ['required', 'string'],
+            'name' => ['required', 'string'],
             'phone' => ['required', 'string'],
-            'city' => ['required', 'string'],
-            'country' => ['required', 'string'],
+            'email' => [
+                'required',
+                'string',
+                'lowercase',
+                'email',
+                'max:255'
+            ],
+            'country' => ['required', 'string']
         ];
     }
 

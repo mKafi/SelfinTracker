@@ -3,6 +3,7 @@
 namespace App\Repositories;
 
 use App\Interfaces\PersonRepositoryInterface;
+use App\Models\Person;
 
 class PersonRepository implements PersonRepositoryInterface
 {
@@ -15,14 +16,16 @@ class PersonRepository implements PersonRepositoryInterface
 
     public function index()
     {
+        return Person::get();
     }
     public function getPersonById($pid)
     {
     }
     public function storePerson(array $data)
     {
+        return Person::create($data);
     }
-    public function updatePerson(array $data,$id)
+    public function updatePerson(array $data, $id)
     {
     }
     public function deletePerson($id)

@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Support\Facades\Log;
 
-class ApiResponseClass
+class ResponseClass
 {
     /**
      * Create a new class instance.
@@ -28,15 +28,19 @@ class ApiResponseClass
         throw new HttpResponseException(response()->json(['message' => $message], 500));
     }
 
-    public static function sendResponse($result, $message, $code = 200)
+    public static function sendResponse($result, $code = 200, $message = null, $statusCode = null)
     {
         $response = [
-            'success' => true,
+            'status' => true,
             'data'    => $result
         ];
 
         if (!empty($message)) {
-            $response['message'] =$message;
+            $response['message'] = $message;
+        }
+
+        if (!empty($statusCode)) {
+            $response['statusCode'] = $statusCode;
         }
 
         return response()->json($response, $code);
