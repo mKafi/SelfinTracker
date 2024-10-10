@@ -20,15 +20,18 @@ class PersonRepository implements PersonRepositoryInterface
     }
     public function getPersonById($pid)
     {
+        return Person::findOrFail($pid);
     }
     public function storePerson(array $data)
     {
         return Person::create($data);
     }
-    public function updatePerson(array $data, $id)
+    public function updatePerson($id, array $data)
     {
+        return Person::where(['id' => $id])->update($data);
     }
     public function deletePerson($id)
     {
+        return Person::destroy($id);
     }
 }

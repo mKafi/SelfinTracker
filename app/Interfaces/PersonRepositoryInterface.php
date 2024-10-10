@@ -7,6 +7,6 @@ interface PersonRepositoryInterface
     public function index();
     public function getPersonById($pid);
     public function storePerson(array $data);
-    public function updatePerson(array $data, $id);
+    public function updatePerson($id, array $data);
     public function deletePerson($id);
 }

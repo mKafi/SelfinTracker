@@ -12,7 +12,7 @@ return [
         'FMS_CREATED' => 'Something went wrong. Person is not created!',
         'FMS_UPDATED' => 'Something went wrong. Person is not updated',
         'FMS_FETCHED' => 'Something went wong. Person record is not fetched successfully',
-        'FMS_DELETED' => 'Person record deleted successfully',
+        'FMS_DELETED' => 'Something went wong. Person record is not deleted!',
         'SC_CREATED' => 7001,
         'SC_FETCHED' => 7002,
         'SC_UPDATED' => 7003,

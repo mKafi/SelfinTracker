@@ -28,21 +28,21 @@ class ResponseClass
         throw new HttpResponseException(response()->json(['message' => $message], 500));
     }
 
-    public static function sendResponse($result, $code = 200, $message = null, $statusCode = null)
+    public static function sendResponse($status, $data, $message, $statusCode, $httStatusCode)
     {
         $response = [
-            'status' => true,
-            'data'    => $result
+            'status' => $status
         ];
-
+        if (!empty($data)) {
+            $response['data'] = $data;
+        }
         if (!empty($message)) {
             $response['message'] = $message;
         }
-
         if (!empty($statusCode)) {
             $response['statusCode'] = $statusCode;
         }
 
-        return response()->json($response, $code);
+        return response()->json($response, $httStatusCode);
     }
 }
