@@ -1,6 +1,6 @@
-# SelfinTracker
+# FinTracker
 
-This is a Laravel based simple and straightforward backed to keep individuals financial expenses, event costs and so on...
+This is a Laravel based simple and straightforward api backed. Subscriber can submit their information to get a subscription and on approval from administrator, s/he can access this system to store own financial expenses. This back-end generate effective statistics and providing API's to build own mobile app as well.
 
 ## Getting Started
 
@@ -23,4 +23,4 @@ No test script availale now
 ## License
 
 The software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-# SelfinTracker
+# FinTracker
